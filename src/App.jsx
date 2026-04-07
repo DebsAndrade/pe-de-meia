@@ -1,18 +1,10 @@
-import './App.css'
-
 function App() {
 
   return (
-    <div className="App" style={{
-      backgroundColor: '#f0f0f0',
-      height: '100vh',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-    }}>
-      <p className="text-3xl font-bold underline">
+    <div className="min-h-screen bg-linear-to-r from-blue-500 to-purple-600 flex items-center justify-center">
+      <h1 className="text-3xl font-bold underline text-center text-white">
         Pé de Meia - O aplicativo que ajuda você a economizar para o futuro!
-      </p>
+      </h1>
     </div>
   )
 }
