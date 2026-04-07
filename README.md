@@ -1,4 +1,4 @@
-# Pe de Meia
+# Pé de Meia 🧦
 
 Aplicacao web em React para apoiar o planejamento financeiro e o habito de economizar com foco no futuro.
 
