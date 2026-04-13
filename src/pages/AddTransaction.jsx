@@ -63,7 +63,7 @@ export default function AddTransaction() {
                         type="number"
                         min={0}
                         step="0.01"
-                        placeholder="0.00"
+                        placeholder="0.000"
                         className="w-full md:w-32 p-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-500 outline-none text-sm"
                         value={amount}
                         onChange={(event) => setAmount(event.target.value)}
