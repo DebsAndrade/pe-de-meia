@@ -1,4 +1,4 @@
-# <img src="src/assets/logo.png" alt="Logo Pé de Meia" width="28" /> Pé de Meia
+# <img src="src/assets/favicon.png" alt="Logo Pé de Meia" width="28" /> Pé de Meia
 
 Aplicacao web em React para apoiar o planejamento financeiro e o habito de economizar com foco no futuro.
 
