@@ -1,15 +1,24 @@
 import { createContext, useState, useEffect, useCallback, useMemo } from 'react';
-import '../index.css'
+import PropTypes from 'prop-types';
 
-export const ThemeContext = createContext()
+const ThemeContext = createContext()
 
 export function ThemeProvider({ children }) {
     const [theme, setTheme] = useState(() => {
-        return localStorage.getItem('theme') || 'light'
+        const saved = localStorage.getItem('theme') || 'light'
+        if (saved === 'dark') {
+            document.documentElement.classList.add('dark')
+        }
+        return saved
     })
 
     useEffect(() => {
         localStorage.setItem('theme', theme)
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
     }, [theme])
 
     const toggleTheme = useCallback(() => {
@@ -24,3 +33,9 @@ export function ThemeProvider({ children }) {
         </ThemeContext.Provider>
     )
 }
+
+ThemeProvider.propTypes = {
+    children: PropTypes.node.isRequired,
+}
+
+export { ThemeContext }

@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 import TransactionItem from "./TransactionItem";
 
-export default function TransactionList({ transactions, onDelete }) {
+export default function TransactionList({ transactions, onDelete, categories = [] }) {
     return (
-        <ul className="space-y-3 max-h-100 overflow-y-auto pr-2 custom-scrollbar">
+        <ul className="space-y-3 max-h-105 overflow-y-auto pr-1">
             {transactions.map((t) => (
-                <TransactionItem key={t.id} transaction={t} onDelete={onDelete} />
+                <TransactionItem key={t.id} transaction={t} onDelete={onDelete} categories={categories} />
             ))}
         </ul>
     );
@@ -13,5 +13,6 @@ export default function TransactionList({ transactions, onDelete }) {
 
 TransactionList.propTypes = {
     transactions: PropTypes.array.isRequired,
-    onDelete: PropTypes.func.isRequired,
-};
+    onDelete: PropTypes.func,
+    categories: PropTypes.array,
+}

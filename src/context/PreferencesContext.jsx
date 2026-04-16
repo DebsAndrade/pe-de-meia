@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect, useMemo } from 'react'
+import PropTypes from 'prop-types'
 
-export const PreferencesContext = createContext()
+const PreferencesContext = createContext()
 
 export function PreferencesProvider({ children }) {
     const [currency, setCurrency] = useState(() => {
@@ -26,4 +27,10 @@ export function PreferencesProvider({ children }) {
             {children}
         </PreferencesContext.Provider>
     )
-};
+}
+
+PreferencesProvider.propTypes = {
+    children: PropTypes.node.isRequired,
+}
+
+export { PreferencesContext }
